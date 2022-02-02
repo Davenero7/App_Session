@@ -20,14 +20,14 @@
 
     // Check if username is empty
     if(empty(trim($_POST['username']))){
-      $username_err = 'Please enter username.';
+      $username_err = 'Porfavor escribe tu usuario.';
     } else{
       $username = trim($_POST['username']);
     }
 
     // Check if password is empty
     if(empty(trim($_POST['password']))){
-      $password_err = 'Please enter your password.';
+      $password_err = 'Porfavor escribe tu password';
     } else{
       $password = trim($_POST['password']);
     }
@@ -94,6 +94,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sign in</title>
+  <link rel="stylesheet" href="./style.css">
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
   <style>
     .wrapper{ 
@@ -101,17 +102,14 @@
       padding: 20px; 
     }
     .wrapper h2 {text-align: center}
-    .wrapper form .form-group span {color: red;}
+    .wrapper form .form-group span {color: white;}
   </style>
 </head>
 <body>
   <main>
-
-  
-    <section class="container wrapper">
+    <!-- <section class="container wrapper">
     <center><img src="http://www.digitalself.com.mx/wp-content/uploads/2017/11/Layercode_560.jpg" alt="" width="300" height="300" /></center>
       <h4 class="display-5 pt-3 text-center">Ingrese su Credencial.</h4><br>
-          <!-- <p class="text-center"></p> -->
           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <div class="form-group <?php (!empty($username_err))?'has_error':'';?>">
               <label for="username">Username</label>
@@ -130,7 +128,41 @@
             </div>
               <a class="btn btn-block btn-outline-success" href="registro.php">Registrate</a>
           </form>
-    </section>
+    </section> -->
+    <br>
+    <br>
+    <center><img src="http://www.digitalself.com.mx/wp-content/uploads/2017/11/Layercode_560.jpg" alt="" width="150" height="150" /></center>
+
+    <div class="login-box">
+      <h2>Login</h2>
+      
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+        <div class="form-group <?php (!empty($username_err))?'has_error':'';?>">
+          <div class="user-box">
+            <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>">
+            <span class="help-block" style="color: #FFFFFF"><?php echo $username_err;?></span>
+            <label>Usuario</label>
+          </div>
+        </div>
+        <div class="form-group <?php (!empty($password_err))?'has_error':'';?>">
+          <div class="user-box">
+            <input type="password" name="password" id="password" class="form-control" value="<?php echo $password ?>">
+            <span class="help-block" style="color: #FFFFFF"><?php echo $password_err;?></span>
+            <label>Password</label>
+          </div>
+        </div>
+            
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="submit" value="Login">
+          </a>
+        
+      </form>
+    </div>
+    
   </main>
 </body>
 </html>
