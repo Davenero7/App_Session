@@ -10,8 +10,10 @@ DROP TABLE IF EXISTS `formulario`;
 CREATE TABLE `formulario` (
   `id` int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
-  `direccion` varchar(255) NOT NULL,
   `f_nacimiento` date NOT NULL,
-  `c_postal` int(11) NOT NULL,
-  `estado` varchar(255) NOT NULL
+  `correo` varchar(255) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
+  `cp` varchar(255) NOT NULL,
+  `estado` varchar(255) NOT NULL,
+  `genero` varchar(255) NOT NULL
 );
