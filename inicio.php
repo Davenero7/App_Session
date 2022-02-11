@@ -1,6 +1,7 @@
 <?php
 	// Initialize session
 	session_start();
+	echo "<script>alert( '".session_id()."' )</script>";
 
 	if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 		echo "<script>alert( 'No tiene seción' )</script>";

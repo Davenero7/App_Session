@@ -4,10 +4,17 @@
 
 	$_SESSION  = array();
 
+	session_unset();
+
+
+
 	// Destroy all session related to user
 	session_destroy();
 
+	setcookie('PHPSESSID',null,-1,'/');
+
 	// Redirect to login page
-	header('location: index.php');
-	exit;
+	echo "<script>window.location.href='index.php'</script>";
+	// header('location: index.php');
+	//exit;
 ?>
