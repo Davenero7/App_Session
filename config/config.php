@@ -10,6 +10,6 @@
 
 	if (!$mysql_db) 
 	{
-		echo "<script>Error en la conexión: => ".$mysql_db->connect_error."</script>";
+		echo "<script>alert( 'Error en la conexión: => ".$mysql_db->connect_error."' )</script>";
 		die("Error: Unable to connect " . $mysql_db->connect_error);
 	}
