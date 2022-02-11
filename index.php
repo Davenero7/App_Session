@@ -83,7 +83,7 @@
             $username_err = "Username does not exists.";
           }
         } else {
-          echo "Oops! Algo salio mal porfavor intenta de nuevo";
+          echo "<script>alert( 'Oops! Algo salio mal porfavor intenta de nuevo' )</script>";
         }
         // Close statement
         $stmt->close();
