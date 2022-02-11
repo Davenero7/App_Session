@@ -42,8 +42,9 @@
       // Prepare a select statement
       $sql = 'SELECT id, username, password FROM users WHERE username = ?';
 
-      if ($stmt = $mysql_db->prepare($sql)) {
-
+      if ($stmt = $mysql_db->prepare($sql)) 
+      {
+        echo "<script>console.log( '".$stml."' );</script>";
         // Set parmater
         $param_username = $username;
 
