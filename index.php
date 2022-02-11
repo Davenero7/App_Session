@@ -4,13 +4,10 @@
 
   // Check if the user is already logged in, if yes then redirect him to welcome page
   if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    echo "<script>alert( 'Si tiene seción' )</script>";
-    header("location: inicio.php");
-    exit;
-  }
-  else
-  {
-    echo "<script>alert( 'No tiene seción' )</script>";
+    echo "<script>alert( 'Si tiene seción' );</script>";
+    echo "<script>window.location.href='inicio.php'</script>";
+    //header("location: inicio.php"); 
+    //56exit;
   }
 
   // Include config file
@@ -44,7 +41,6 @@
 
       if ($stmt = $mysql_db->prepare($sql)) 
       {
-        echo "<script>console.log( '".$stml."' );</script>";
         // Set parmater
         $param_username = $username;
 
@@ -88,6 +84,10 @@
         }
         // Close statement
         $stmt->close();
+      }
+      else
+      {
+        if ( isset($_POST['username'] ) ) echo "<script>alert( 'Oops! Algo salio mal con la base de datos' )</script>";
       }
 
       // Close connection
